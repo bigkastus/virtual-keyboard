@@ -25,7 +25,8 @@ const Keyboard = {
         this.elements.textarea = document.createElement("textarea");
         // Setup textarea element
         this.elements.textarea.classList.add("use-keyboard-input");
-        this.elements.textarea.placeholder = 'Click Here';
+        // this.elements.textarea.placeholder = 'Text';
+        this.elements.textarea.autofocus = true;
         // Add teaxtarea to DOM 
         document.body.appendChild(this.elements.textarea);
     
@@ -71,7 +72,7 @@ const Keyboard = {
         };
     
     
-        false ? nkeyLayout = keyLayout.slice(60, ) : nkeyLayout = keyLayout.slice(0, 60);
+        false ? nkeyLayout = keyLayout.slice(60, ) : nkeyLayout = keyLayout.slice(0, 62);
         
     
         
@@ -84,20 +85,20 @@ const Keyboard = {
           keyElement.classList.add("keyboard__key");
     
           switch (key) {
-            case "lng":
-              keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
-              keyElement.textContent = "lng";
+            // case "lng":
+            //   keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+            //   keyElement.textContent = "lng";
     
-              keyElement.addEventListener("click", () => {
-                this._togglelng();
-                keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
+            //   keyElement.addEventListener("click", () => {
+            //     this._togglelng();
+            //     keyElement.classList.toggle("keyboard__key--active", this.properties.capsLock);
                   // 
               // keyElement.addEventListener("click", () => {
               //   this.properties.value = this.properties.value.substring(0, this.properties.value.length - 1);
               //   this._triggerEvent("oninput");
-              });
+              // });
     
-              break;
+              // break;
             
             case "backspace":
               keyElement.classList.add("keyboard__key--wide");
@@ -122,25 +123,25 @@ const Keyboard = {
               break;
             
             case "Shift-L":
-              keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+              keyElement.classList.add("keyboard__key--wide");
               keyElement.textContent = "Shift";
               // keyElement.innerHTML = createIconHTML("keyboard_shift");
     
               keyElement.addEventListener("click", () => {
                 this._toggleShift();
-                keyElement.classList.toggle("keyboard__key--active", this.properties.shift);
+                // keyElement.classList.toggle("keyboard__key--active", this.properties.shift);
               });
     
               break;    
             
             case "Shift-R":
-                keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable");
+                keyElement.classList.add("keyboard__key--wide");
                 keyElement.textContent = "Shift";
                 // keyElement.innerHTML = createIconHTML("keyboard_shift");
       
                 keyElement.addEventListener("click", () => {
                   this._toggleShift();
-                  keyElement.classList.toggle("keyboard__key--active", this.properties.shift);
+                  // keyElement.classList.toggle("keyboard__key--active", this.properties.shift);
                 });
       
                 break;    

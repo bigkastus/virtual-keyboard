@@ -31,7 +31,7 @@
   
   .keyboard__key {
     height: 45px;
-    width: 4%;
+    width: 5%;
     max-width: 90px;
     margin: 3px;
     border-radius: 4px;
@@ -52,17 +52,20 @@
     -webkit-tap-highlight-color: transparent;
     position: relative;
   }
-  
+
+  .keyboard__key:nth-child(n+0):nth-child(-n+11){
+    width: 6%;
+  }
   .keyboard__key:active {
     background: rgba(255, 255, 255, 0.12);
   }
   
   .keyboard__key--wide {
-    width: 16%;
+    width: 11%;
   }
   
   .keyboard__key--extra-wide {
-    width: 36%;
+    width: 40%;
     max-width: 600px;
   }
   
