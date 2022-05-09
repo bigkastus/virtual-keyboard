@@ -87,3 +87,6 @@
   .keyboard__key--dark {
     background: rgba(0, 0, 0, 0.25);
   }
+  .realKey{
+    background: rgba(222, 216, 216, 0.7);
+  }
