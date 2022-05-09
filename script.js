@@ -60,10 +60,10 @@ const Keyboard = {
         const fragment = document.createDocumentFragment();
         const keyLayout = [
           "`","1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
-          "Tab","q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]","slash","Del",
+          "Tab","q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]","\\","Del",
           "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l",  ";",  "'","enter",
-          "Shift-L", "z", "x", "c", "v", "b", "n", "m", ",", ".", "slash","Arr-up", "Shift-R",
-          "Ctrl","win","Alt", "space", "Alt", "Arr-Left", "Arr-down", "Arr-right", "Ctrl"
+          "Shift-L", "z", "x", "c", "v", "b", "n", "m", ",", ".", "\/","Arr-up", "Shift-R",
+          "Ctrl","win","Alt", "space", "Alt", "Arr-left", "Arr-down", "Arr-right", "Ctrl"
         ];
     
         // Creates HTML for an icon
@@ -132,8 +132,20 @@ const Keyboard = {
                 // keyElement.classList.toggle("keyboard__key--active", this.properties.shift);
               });
     
-              break;    
+              break;
             
+              case "Arr-up":
+                keyElement.classList.add("keyboard__key");
+                // keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
+                keyElement.innerHTML = createIconHTML("arrow_upward");
+      
+                keyElement.addEventListener("click", () => {
+                  this.close();
+                  this._triggerEvent("onclose");
+                });
+      
+                break;
+              
             case "Shift-R":
                 keyElement.classList.add("keyboard__key--wide");
                 keyElement.textContent = "Shift";
@@ -168,9 +180,10 @@ const Keyboard = {
     
               break;
     
-            case "done":
-              keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
-              keyElement.innerHTML = createIconHTML("check_circle");
+            case "Arr-left":
+              keyElement.classList.add("keyboard__key");
+              // keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
+              keyElement.innerHTML = createIconHTML("arrow_back");
     
               keyElement.addEventListener("click", () => {
                 this.close();
@@ -178,6 +191,30 @@ const Keyboard = {
               });
     
               break;
+             
+            case "Arr-down":
+              keyElement.classList.add("keyboard__key");
+              // keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
+              keyElement.innerHTML = createIconHTML("arrow_downward");
+    
+              keyElement.addEventListener("click", () => {
+                this.close();
+                this._triggerEvent("onclose");
+              });
+    
+              break;
+             
+              case "Arr-right":
+                keyElement.classList.add("keyboard__key");
+                // keyElement.classList.add("keyboard__key--wide", "keyboard__key--dark");
+                keyElement.innerHTML = createIconHTML("arrow_forward");
+      
+                keyElement.addEventListener("click", () => {
+                  this.close();
+                  this._triggerEvent("onclose");
+                });
+      
+                break;  
     
             default:
               keyElement.textContent = key.toLowerCase();
