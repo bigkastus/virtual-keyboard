@@ -266,6 +266,7 @@ const Keyboard = {
             console.log(this)
             // this.properties.value += this.properties.capsLock ? key.toUpperCase() : key.toLowerCase();
             // this._triggerEvent("oninput");
+            setTimeout((()=> el.classList.remove("realKey")), 300)            
           }         
         }
             )
